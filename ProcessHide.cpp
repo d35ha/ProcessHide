@@ -103,7 +103,7 @@ INT main(INT argc, CHAR** argv) {
 		if ((fnGetSystemWow64DirectoryA = (LPVOID)GetProcAddress(hKernel32, "GetSystemWow64DirectoryA")))
 		{
 			CHAR WoW64Dir[1] = { 0 };
-			if ((*(UINT(*)(LPSTR, UINT)) fnGetSystemWow64DirectoryA)(
+			if ((*(UINT(WINAPI*)(LPSTR, UINT)) fnGetSystemWow64DirectoryA)(
 				WoW64Dir,
 				sizeof(WoW64Dir)
 				))
